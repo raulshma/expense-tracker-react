@@ -10,7 +10,7 @@ import { GlobalProvider } from './context/GlobalState';
 function App() {
   return (
     <GlobalProvider>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <PrivateRoute exact path="/" component={Home} />
         <Route exact path="/login" component={Login} />
       </Router>

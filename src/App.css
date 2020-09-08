@@ -166,6 +166,7 @@ input[type='number'] {
 
 .login {
   width: 80vw;
+  max-width: 600px;
   height: 100%;
   display: flex;
   flex-flow: column;
