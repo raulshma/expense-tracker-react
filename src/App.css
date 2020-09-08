@@ -130,10 +130,6 @@ input[type='number'] {
   position: relative;
   padding: 10px;
   margin: 10px 0;
-  transition: transform 300ms ease-in-out;
-}
-.list li:hover {
-  transform: scale(1.03);
 }
 
 .list li.plus {
@@ -156,7 +152,7 @@ input[type='number'] {
   top: 50%;
   left: 0;
   transform: translate(-100%, -50%);
-  opacity: 1;
+  opacity: 0;
   transition: opacity 0.3s ease;
 }
 
