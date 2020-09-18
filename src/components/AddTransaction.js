@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useSpring, animated, useChain } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 
 import { GlobalContext } from '../context/GlobalState';
 import firebase from 'firebase/app';
