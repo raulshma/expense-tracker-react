@@ -1,14 +1,23 @@
 import React, { useContext } from 'react';
+import { useSpring, animated } from 'react-spring';
 import { GlobalContext } from '../context/GlobalState';
-import { numWithCommas } from '../utils/Formatting';
+
 export const Transaction = ({ transaction }) => {
   const { deleteTransaction } = useContext(GlobalContext);
   const sign = transaction.amount < 0 ? '-' : '+';
+  const anim = useSpring({
+    number: Number(transaction.amount),
+    from: { number: 0 },
+    delay: 300,
+  });
   return (
     <li className={transaction.amount < 0 ? 'minus' : 'plus'}>
       {transaction.text}{' '}
       <span>
-        {sign} ₹{numWithCommas(Math.abs(transaction.amount))}
+        {sign} ₹
+        <animated.span>
+          {anim.number.interpolate((val) => Math.floor(val))}
+        </animated.span>
       </span>
       <button
         onClick={() =>
