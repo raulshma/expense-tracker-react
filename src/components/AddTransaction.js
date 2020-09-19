@@ -29,23 +29,20 @@ export const AddTransaction = () => {
       <form onSubmit={onSubmit}>
         <animated.div style={animTxt1}>
           <div className="form-control">
-            <label htmlFor="text">Text</label>
+            <label htmlFor="text">Title</label>
             <input
               type="text"
               value={text}
               onChange={(e) => {
                 setText(e.target.value);
               }}
-              placeholder="Enter text..."
+              placeholder="Enter title..."
             />
           </div>
         </animated.div>
         <animated.div style={animTxt2}>
           <div className="form-control">
-            <label htmlFor="amount">
-              Amount <br />
-              (negative - expense, positive - income)
-            </label>
+            <label htmlFor="amount">Amount (-/+)</label>
             <input
               type="number"
               value={amount}
@@ -53,7 +50,7 @@ export const AddTransaction = () => {
               placeholder="Enter amount..."
             />
           </div>
-        </animated.div>{' '}
+        </animated.div>
         <animated.div style={animBtn}>
           <button className="btn">Add transaction</button>
         </animated.div>

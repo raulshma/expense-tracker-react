@@ -132,6 +132,7 @@ input[type='number'] {
   color: #333;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
   padding: 10px;
   margin: 10px 0;
@@ -230,6 +231,17 @@ input[type='number'] {
 
 .login__github-button:focus {
   outline: 0;
+}
+
+.transaction-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-text > span:nth-of-type(2) {
+  font-size: 0.75em;
+  color: #898989;
+  margin-top: 0.2em;
 }
 
 @media all and (max-width: 768px) {

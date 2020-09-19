@@ -12,18 +12,18 @@ export const TransactionList = () => {
     from: { transform: 'scale(0.9)', opacity: 0 },
     enter: { transform: 'scale(1)', opacity: 1 },
     leave: { transform: 'scale(0.9)', opacity: 0 },
-    trail: 300,
+    trail: 150,
   });
   return (
-    <>
+    <div>
       <h3>History</h3>
       <ul className="list">
-        {transitions.map(({ item, props, key }) => (
+        {transitions.map(({ item, props, key }, index) => (
           <animated.div key={key} style={props}>
-            <Transaction key={item.id} transaction={item} />
+            <Transaction key={item.id} transaction={item} index={index} />
           </animated.div>
         ))}
       </ul>
-    </>
+    </div>
   );
 };

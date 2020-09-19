@@ -20,7 +20,7 @@ export const Balance = () => {
       <h1 className="balance">
         {total < 0 ? '-' : ''}₹
         <animated.span>
-          {anim.number.interpolate((val) => Math.floor(val))}
+          {anim.number.interpolate((val) => Math.abs(val.toFixed(2)))}
         </animated.span>
       </h1>
     </>

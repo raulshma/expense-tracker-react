@@ -12,8 +12,8 @@ function Home() {
       <div className="container">
         <Balance />
         <IncomeExpences />
-        <TransactionList />
         <AddTransaction />
+        <TransactionList />
       </div>
     </>
   );

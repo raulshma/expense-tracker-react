@@ -2,21 +2,26 @@ import React, { useContext } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { GlobalContext } from '../context/GlobalState';
 
-export const Transaction = ({ transaction }) => {
+export const Transaction = ({ transaction, index }) => {
   const { deleteTransaction } = useContext(GlobalContext);
   const sign = transaction.amount < 0 ? '-' : '+';
   const anim = useSpring({
     number: Number(transaction.amount),
     from: { number: 0 },
-    delay: 300,
+    delay: index * 150,
   });
   return (
     <li className={transaction.amount < 0 ? 'minus' : 'plus'}>
-      {transaction.text}{' '}
+      <div className="transaction-text">
+        <span>{transaction.text}</span>
+        <span>
+          {new Date(transaction.timeStamp.toDate()).toLocaleDateString()}
+        </span>
+      </div>
       <span>
         {sign} ₹
         <animated.span>
-          {anim.number.interpolate((val) => Math.floor(val))}
+          {anim.number.interpolate((val) => Math.abs(val.toFixed(2)))}
         </animated.span>
       </span>
       <button
