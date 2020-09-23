@@ -8,11 +8,13 @@ import { AddTransaction } from './AddTransaction';
 function Home() {
   return (
     <>
-      <Header />
       <div className="container">
+        <Header />
         <Balance />
         <IncomeExpences />
         <AddTransaction />
+      </div>
+      <div className="container container-history">
         <TransactionList />
       </div>
     </>

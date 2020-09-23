@@ -25,6 +25,10 @@ body {
 
 #root {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  height: 100vh;
   padding: 1rem;
 }
 
@@ -32,7 +36,11 @@ body {
   margin: 30px auto;
   width: 350px;
 }
-
+.container-history {
+  gap: 2rem;
+  margin: 0;
+  overflow-y: scroll;
+}
 h1 {
   letter-spacing: 1px;
   margin: 0;
@@ -135,7 +143,7 @@ input[type='number'] {
   align-items: center;
   position: relative;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px;
   transition: transform 300ms ease;
 }
 
@@ -148,14 +156,17 @@ input[type='number'] {
 }
 
 .delete-btn {
+  width: 100%;
   cursor: pointer;
   border: 0;
   color: #db2915;
+  font-weight: 500;
+  letter-spacing: 2px;
   background: none;
-  margin-top: 2px;
   position: absolute;
-  top: 50%;
-  left: 0;
+  padding-top: 15px;
+  top: 115%;
+  left: 100%;
   transform: translate(-100%, -50%);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -165,7 +176,8 @@ input[type='number'] {
   width: 1rem;
 }
 .list li:hover {
-  transform: translateX(1rem);
+  transform: translateY(-1.5rem);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.12), 0 3px 5px rgba(0, 0, 0, 0.24);
 }
 .list li:hover .delete-btn {
   opacity: 1;
@@ -248,5 +260,17 @@ input[type='number'] {
   #root {
     padding: unset;
     box-shadow: none;
+    display: block;
+    grid-template-columns: unset;
+    gap: unset;
+    height: unset;
+  }
+  .container-history {
+    gap: unset;
+    margin: unset;
+    overflow-y: unset;
+  }
+  .list li {
+    margin: 10px 0;
   }
 }
