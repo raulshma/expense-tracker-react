@@ -15,7 +15,7 @@ export const Transaction = ({ transaction, index }) => {
       <div className="transaction-text">
         <span>{transaction.text}</span>
         <span>
-          {new Date(transaction.timeStamp.toDate()).toLocaleDateString()}
+          {new Date(transaction.timeStamp?.toDate()).toLocaleDateString()}
         </span>
       </div>
       <span>
